@@ -1,4 +1,5 @@
 let expenses = [];
+let count = 0;
 
 function getAllExpenses({ userId, from, to, categories }) {
   let result = expenses;
@@ -29,7 +30,7 @@ function getAllExpenses({ userId, from, to, categories }) {
 
 function createExpense(data) {
   const newExpense = {
-    id: expenses.length + 1,
+    id: ++count,
     ...data,
   };
 
@@ -72,6 +73,7 @@ function updateExpense(id, updates) {
 
 function reset() {
   expenses = [];
+  count = 0;
 }
 
 module.exports = {

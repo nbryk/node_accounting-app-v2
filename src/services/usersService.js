@@ -1,4 +1,5 @@
 let users = [];
+let count = 0;
 
 function getAll() {
   return users;
@@ -16,7 +17,7 @@ function create(name) {
     throw error;
   }
 
-  const newUser = { id: users.length + 1, name };
+  const newUser = { id: ++count, name };
 
   users.push(newUser);
 
@@ -55,6 +56,7 @@ function update(id, name) {
 
 function reset() {
   users = [];
+  count = 0;
 }
 
 module.exports = {
